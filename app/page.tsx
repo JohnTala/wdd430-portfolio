@@ -4,13 +4,13 @@ const projects = [
     title: 'E-Commerce Dashboard',
     description: 'A full-stack Next.js app for managing products.',
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
-    link: 'https://github.com/JohnTala/wdd430-portfolio'
+    link: 'https://github.com/JohnTala/smart-task-manager-api '
   },
   {
     title: 'Weather Application',
     description: 'A React app that fetches and displays weather data.',
     technologies: ['React', 'JavaScript', 'CSS'],
-    link: 'https://github.com/JohnTala/jwt-oAuth-project '
+    link: 'https://github.com/JohnTala/jwt-project '
   }
 ];
 
