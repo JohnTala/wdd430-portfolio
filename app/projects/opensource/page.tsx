@@ -1,29 +1,7 @@
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  type: "opensource" | "school";
-  technologies: string[];
-  link?: string;
-}
-
-async function getProjects(): Promise<Project[]> {
-  const res = await fetch(
-    "http://localhost:3000/api/projects?type=opensource",
-    {
-      cache: "no-store",
-    }
-  );
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch projects");
-  }
-
-  return res.json();
-}
+import { getProjects } from "@/lib/projects-db";
 
 export default async function OpenSourcePage() {
-  const projects = await getProjects();
+  const projects = await getProjects("opensource");
 
   return (
     <main>
