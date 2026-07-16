@@ -1,21 +1,15 @@
+import { Suspense } from "react";
+import SchoolProjectList from "@/components/SchoolProjectList";
+import SchoolProjectSkeleton from "@/components/SchoolProjectSkeleton";
 
-import { getProjects } from "@/lib/projects-db";
-
-export default async function SchoolProjectsPage() {
-  const projects = await getProjects("school");
-
+export default function SchoolProjectsPage() {
   return (
     <main>
       <h1>School Projects</h1>
 
-      <ul>
-        {projects.map((project) => (
-          <li key={project.id}>
-            <h2>{project.title}</h2>
-            <p>{project.description}</p>
-          </li>
-        ))}
-      </ul>
+      <Suspense fallback={<SchoolProjectSkeleton />}>
+        <SchoolProjectList />
+      </Suspense>
     </main>
   );
 }

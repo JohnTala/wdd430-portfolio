@@ -1,6 +1,8 @@
 import SkillCard from "@/components/SkillCard";
 
-export default function About() {
+export default async function About() {
+
+    await new Promise((resolve)=>{setTimeout(resolve,1000)})
   return (
     <main className="max-w-4xl mx-auto px-4 py-12">
       <h2 className="text-3xl font-bold mb-6">About Me</h2>
